@@ -22,7 +22,3 @@ npm run dev
 # Build for production
 npm run build
 ```
-
-## Links
-
-- [Privacy Policy](/privacy)
