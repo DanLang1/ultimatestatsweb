@@ -15,7 +15,7 @@ import ThemeToggle from "../components/ThemeToggle";
     </div>
 
     <header
-      class="container mx-auto px-6 py-6 flex justify-between items-center relative z-10"
+      class="container mx-auto px-6 py-4 flex justify-between items-center relative z-10"
     >
       <div class="flex items-center gap-3 select-none">
         <div class="text-2xl font-black tracking-tighter">
@@ -26,9 +26,9 @@ import ThemeToggle from "../components/ThemeToggle";
       <ThemeToggle client:load />
     </header>
 
-    <main class="container mx-auto px-6 pb-20 relative z-10">
+    <main class="container mx-auto px-6 pb-12 md:pb-20 relative z-10">
       <!-- Hero -->
-      <section class="py-20 text-center max-w-4xl mx-auto">
+      <section class="pt-4 pb-12 md:pb-20 text-center max-w-4xl mx-auto">
         <div
           class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--bg-card)] border border-[var(--border-color)] text-sm mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700"
         >
@@ -42,19 +42,10 @@ import ThemeToggle from "../components/ThemeToggle";
           </span>
           Beta Soon
         </div>
-        <h1
-          class="text-5xl md:text-7xl font-black mb-6 leading-tight tracking-tight animate-in fade-in slide-in-from-bottom-5 duration-700 delay-150"
-        >
-          Track <span
-            class="bg-gradient-to-r from-[var(--color-blue-600)] to-[var(--color-emerald-500)] text-transparent bg-clip-text"
-            >Stats</span
-          >.
-        </h1>
         <p
-          class="text-xl opacity-80 mb-10 max-w-2xl mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300"
+          class="text-2xl md:text-3xl font-bold mb-10 max-w-3xl mx-auto leading-tight animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300"
         >
-          I wanted to learn React Native, so I started out building a simple
-          Scoreboard app, and it slowly is becoming a basic stat tracker for
+          A hobby project to learn React Native. Scoreboard + stat tracking for
           Ultimate.
         </p>
         <!-- <div class="flex flex-col md:flex-row justify-center items-center md:items-start gap-4 animate-in fade-in slide-in-from-bottom-7 duration-700 delay-500">
@@ -82,7 +73,7 @@ import ThemeToggle from "../components/ThemeToggle";
             </div>
             <div class="text-xs opacity-50">No subscription</div>
           </div>
-          <div class="w-px h-10 bg-[var(--border-color)]"></div>
+          <div class="hidden sm:block w-px h-10 bg-[var(--border-color)]"></div>
           <div class="text-center">
             <div
               class="text-lg sm:text-xl font-bold text-[var(--color-amber-500)]"
@@ -91,7 +82,7 @@ import ThemeToggle from "../components/ThemeToggle";
             </div>
             <div class="text-xs opacity-50">No signup needed</div>
           </div>
-          <div class="w-px h-10 bg-[var(--border-color)]"></div>
+          <div class="hidden sm:block w-px h-10 bg-[var(--border-color)]"></div>
           <div class="text-center">
             <div
               class="text-lg sm:text-xl font-bold text-[var(--color-rose-500)]"
@@ -100,7 +91,7 @@ import ThemeToggle from "../components/ThemeToggle";
             </div>
             <div class="text-xs opacity-50">Works anywhere</div>
           </div>
-          <div class="w-px h-10 bg-[var(--border-color)]"></div>
+          <div class="hidden sm:block w-px h-10 bg-[var(--border-color)]"></div>
           <div class="text-center">
             <div
               class="text-lg sm:text-xl font-bold text-[var(--accent-color)]"
@@ -116,7 +107,7 @@ import ThemeToggle from "../components/ThemeToggle";
       </section>
 
       <!-- App Preview Screenshots -->
-      <section class="mb-32 relative">
+      <section class="mb-16 md:mb-32 relative">
         <div class="max-w-4xl mx-auto">
           <!-- Segmented Control -->
           <div class="flex justify-center mb-8">
@@ -171,7 +162,7 @@ import ThemeToggle from "../components/ThemeToggle";
                   class="w-full h-auto rounded-2xl shadow-2xl border border-[var(--border-color)]"
                 ></video>
                 <p class="text-center mt-6 opacity-70 text-lg">
-                  <strong>Team and Player Stats</strong> along with a game timeline.
+                  <strong>Team and Player Stats</strong> along with a game timeline
                 </p>
               </div>
             </div>
@@ -204,7 +195,7 @@ import ThemeToggle from "../components/ThemeToggle";
       <!-- Features Grid -->
       <section
         id="features"
-        class="relative py-20 bg-[var(--bg-card)] w-screen left-1/2 -translate-x-1/2"
+        class="relative py-12 md:py-20 bg-[var(--bg-card)] w-screen left-1/2 -translate-x-1/2"
       >
         <div class="max-w-6xl mx-auto px-6">
           <!-- Section header -->
@@ -230,7 +221,7 @@ import ThemeToggle from "../components/ThemeToggle";
                 {
                   icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/><circle cx="19" cy="18" r="2" stroke-width="2"/><circle cx="8" cy="6" r="2" stroke-width="2"/><circle cx="14" cy="12" r="2" stroke-width="2"/></svg>`,
                   title: "Game Timeline",
-                  desc: "View the flow of the game in a timeline showing each and every time your O-Line gets broken.",
+                  desc: "View the game as a timeline, so you can see every time your O-Line got broken.",
                   color: "var(--color-emerald-500)",
                 },
                 {
@@ -278,13 +269,18 @@ import ThemeToggle from "../components/ThemeToggle";
       </section>
 
       <!-- Limitations -->
-      <section class="py-16 max-w-3xl mx-auto">
+      <section class="py-10 md:py-16 max-w-3xl mx-auto">
         <h2 class="text-2xl font-bold mb-8 text-center opacity-70">
           Current Limitations
         </h2>
         <div class="space-y-4">
           {
             [
+              {
+                icon: "🐛",
+                title: "Expect Bugs",
+                desc: `It's very likely that things may break as this is a solo hobby project. I work full time, but will do my best to fix things as soon as possible. <a href="https://github.com/DanLang1/ultimatestatsweb/issues" target="_blank" class="underline hover:text-[var(--accent-color)]">Report app bugs here</a>.`,
+              },
               {
                 icon: "🍎",
                 title: "iOS Coming Soon",
@@ -310,7 +306,10 @@ import ThemeToggle from "../components/ThemeToggle";
                 <span class="text-2xl shrink-0">{item.icon}</span>
                 <div>
                   <h3 class="font-bold mb-1">{item.title}</h3>
-                  <p class="opacity-60 text-sm leading-relaxed">{item.desc}</p>
+                  <p
+                    class="opacity-60 text-sm leading-relaxed"
+                    set:html={item.desc}
+                  />
                 </div>
               </div>
             ))
@@ -329,6 +328,12 @@ import ThemeToggle from "../components/ThemeToggle";
             href="/privacy"
             class="text-[var(--text-app)] opacity-60 hover:opacity-100 hover:text-[var(--accent-color)] transition-all"
             >Privacy</a
+          >
+          <a
+            href="https://github.com/DanLang1/ultimatestatsweb/issues"
+            target="_blank"
+            class="text-[var(--text-app)] opacity-60 hover:opacity-100 hover:text-[var(--accent-color)] transition-all"
+            >Report a Problem</a
           >
         </div>
         <div
