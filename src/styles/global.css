@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors from Midnight Electric */
+  --color-navy-900: #0f172a;
+  --color-slate-50: #f8fafc;
+  --color-blue-600: #3b82f6;
+  --color-indigo-700: #3a506b;
+  --color-emerald-500: #10b981;
+  --color-rose-500: #f43f5e;
+  --color-amber-500: #f59e0b;
+
+  /* Semantic Aliases */
+  --color-brand-dark: var(--color-navy-900);
+  --color-brand-light: var(--color-slate-50);
+  --color-accent: var(--color-blue-600);
+}
+
+/* Base Theme Variables */
+:root {
+  /* Light Mode (Default) - High Visibility */
+  --bg-app: #ffffff;
+  --text-app: #0f172a;
+  --bg-card: #f8fafc;
+  --bg-input: #f1f5f9;
+  --border-color: #cbd5e1;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+
+  --accent-color: var(--color-blue-600);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark Mode - Midnight Electric */
+    --bg-app: #0f172a;
+    --text-app: #ffffff;
+    --bg-card: #1e293b; /* Slightly lighter than #0F172A */
+    --bg-input: #334155;
+    --border-color: #334155;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Manual Dark Mode Override */
+:root.dark {
+  --bg-app: #0f172a;
+  --text-app: #ffffff;
+  --bg-card: #1e293b;
+  --bg-input: #334155;
+  --border-color: #334155;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+:root.light {
+  --bg-app: #ffffff;
+  --text-app: #0f172a;
+  --bg-card: #f8fafc;
+  --bg-input: #f1f5f9;
+  --border-color: #cbd5e1;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-app);
+  font-family: system-ui, -apple-system, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Noise texture overlay for grainy effect */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+:root.dark .noise-overlay {
+  opacity: 0.02;
+}

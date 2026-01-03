@@ -1,0 +1,56 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Privacy Policy - Ultimate Stats">
+  <div class="relative overflow-hidden w-full min-h-screen">
+    <div
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-[radial-gradient(ellipse_at_top,var(--color-blue-600)_0%,transparent_70%)] opacity-10 dark:opacity-20 pointer-events-none"
+    >
+    </div>
+
+    <header
+      class="container mx-auto px-6 py-6 flex justify-between items-center relative z-10"
+    >
+      <a
+        href="/"
+        class="text-2xl font-black tracking-tighter select-none hover:opacity-80 transition-opacity"
+      >
+        <span class="text-[var(--accent-color)]">ULTIMATE</span>STATS
+      </a>
+      <a
+        href="/"
+        class="text-sm font-bold opacity-70 hover:opacity-100 transition-opacity"
+        >Back to Home</a
+      >
+    </header>
+
+    <main class="container mx-auto px-6 py-20 relative z-10 max-w-3xl">
+      <h1 class="text-4xl md:text-5xl font-black mb-8 tracking-tight">
+        Privacy Policy
+      </h1>
+
+      <div class="prose prose-invert lg:prose-xl space-y-8 opacity-90">
+        <section>
+          <h2 class="text-2xl font-bold mb-4">
+            This app doesn't collect any data
+          </h2>
+          <p class="leading-relaxed">
+            Everything is stored locally on your device (specifically, the app
+            uses AsyncStorage). Currently there is no server or 'cloud' to
+            upload your games to. If you delete the app or clear your cache,
+            your data is gone forever.
+          </p>
+          <p class="leading-relaxed">
+            This app also doesn't require any permissions to function. It
+            doesn't have access to your files, location, camera, or microphone.
+          </p>
+        </section>
+
+        <footer class="pt-20 text-sm opacity-50">
+          Last updated: Jan 2, 2026.
+        </footer>
+      </div>
+    </main>
+  </div>
+</Layout>
