@@ -8,7 +8,7 @@ I started building this app to learn React Native, and as I started adding more 
 
 ## Tech Stack
 
-This website is built with [Astro](https://astro.build). The app is built with [React Native](https://reactnative.dev) and Expo.
+This website is built with [Astro](https://astro.build). The app is built with [React Native](https://reactnative.dev) and Expo. App is currently a private repo but I may make it open source in the future.
 
 ## Development
 
