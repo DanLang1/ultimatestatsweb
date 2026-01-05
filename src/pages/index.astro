@@ -28,19 +28,6 @@ import ThemeToggle from "../components/ThemeToggle";
     <main class="container mx-auto px-6 pb-12 md:pb-20 relative z-10">
       <!-- Hero -->
       <section class="pt-4 pb-12 md:pb-20 text-center max-w-4xl mx-auto">
-        <div
-          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--bg-card)] border border-[var(--border-color)] text-sm mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700"
-        >
-          <span class="relative flex h-2 w-2">
-            <span
-              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"
-            ></span>
-            <span
-              class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"
-            ></span>
-          </span>
-          Beta Soon
-        </div>
         <p
           class="text-2xl md:text-3xl font-bold mb-10 max-w-3xl mx-auto leading-tight animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300"
         >
@@ -67,7 +54,7 @@ import ThemeToggle from "../components/ThemeToggle";
             <div
               class="text-lg sm:text-xl font-bold text-[var(--color-emerald-500)]"
             >
-              $5 Once
+              Free!
             </div>
             <div class="text-xs opacity-50">No subscription</div>
           </div>
@@ -87,7 +74,7 @@ import ThemeToggle from "../components/ThemeToggle";
             >
               Offline
             </div>
-            <div class="text-xs opacity-50">Works anywhere</div>
+            <div class="text-xs opacity-50">Data stored locally</div>
           </div>
           <div class="hidden sm:block w-px h-10 bg-[var(--border-color)]"></div>
           <div class="text-center">
@@ -101,6 +88,66 @@ import ThemeToggle from "../components/ThemeToggle";
               rip frisbee-rankings.com
             </div>
           </div>
+        </div>
+
+        <!-- Beta Join CTA -->
+        <div
+          class="mt-10 p-6 rounded-2xl bg-gradient-to-r from-[var(--color-emerald-500)]/10 to-[var(--color-blue-600)]/10 border border-[var(--color-emerald-500)]/30 max-w-xl mx-auto animate-in fade-in slide-in-from-bottom-9 duration-700 delay-700"
+        >
+          <div class="flex items-center justify-center gap-2 mb-3">
+            <h3 class="text-lg font-bold">
+              Help me get this on the playstore!
+            </h3>
+          </div>
+          <p class="text-sm opacity-70 mb-4 text-center">
+            For best chances of getting this approved I need to run a closed
+            testing group for 14 days. It helps if you use the app at least once
+            a day.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href="https://groups.google.com/g/u-stat-closed-test"
+              target="_blank"
+              class="inline-flex items-center justify-center gap-2 bg-[var(--color-emerald-500)] text-white px-5 py-2.5 rounded-xl font-bold hover:brightness-110 transition-all text-sm"
+            >
+              <span>1. Join Test Group</span>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                ></path></svg
+              >
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.langdk.ultimatestats"
+              target="_blank"
+              class="inline-flex items-center justify-center gap-2 bg-[var(--accent-color)] text-white px-5 py-2.5 rounded-xl font-bold hover:brightness-110 transition-all text-sm"
+            >
+              <span>2. Get on Play Store</span>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                ></path></svg
+              >
+            </a>
+          </div>
+          <p class="text-xs opacity-50 mt-4 text-center italic">
+            If I ever add paywalls for future features, if you beta tested
+            you'll get them for free
+          </p>
         </div>
       </section>
 
@@ -268,20 +315,23 @@ import ThemeToggle from "../components/ThemeToggle";
 
       <!-- Limitations -->
       <section class="py-10 md:py-16 max-w-3xl mx-auto">
-        <h2 class="text-2xl font-bold mb-8 text-center opacity-70">
-          Current Limitations
-        </h2>
+        <h2 class="text-2xl font-bold mb-8 text-center opacity-70">The Cons</h2>
         <div class="space-y-4">
           {
             [
               {
                 icon: "🐛",
                 title: "Expect Bugs",
-                desc: `It's very likely that things may break as this is a solo hobby project. I have a full time job, but will do my best to fix things as soon as possible. <a href="https://github.com/DanLang1/ultimatestatsweb/issues" target="_blank" class="underline hover:text-[var(--accent-color)]">Report app bugs here</a>.`,
+                desc: `It's very likely that things may break as this is a solo hobby project. I have a full time job, but will do my best to fix things as soon as possible. <a href="https://groups.google.com/g/u-stat-closed-test" target="_blank" class="underline hover:text-[var(--accent-color)]">Report bugs or give feedback here</a>.`,
+              },
+              {
+                icon: "💰",
+                title: "Future Features May Have Paywalls",
+                desc: "Basic stat tracking and everything currently developed will be free, but if I add cloud sync or more in depth stat tracking I may paywall that.",
               },
               {
                 icon: "🍎",
-                title: "iOS Coming Soon",
+                title: "iOS Coming Eventually",
                 desc: "This is built on React Native so in theory it should work on iOS, but I need a Macbook to fully build/test it.",
               },
               {
@@ -292,7 +342,7 @@ import ThemeToggle from "../components/ThemeToggle";
               {
                 icon: "📊",
                 title: "Basic Event Tracking",
-                desc: "Only game events are tracked (goal, assist, drop, turn). Passes between players are not tracked. I have some ideas to handle this in the future, but it's a pretty large feature.",
+                desc: "Only game events are tracked (goal, assist, drop, turn). Passes between players are not tracked. I have some ideas to handle this in the future, but it's a pretty large feature",
               },
               {
                 icon: "⏱️",
@@ -328,10 +378,10 @@ import ThemeToggle from "../components/ThemeToggle";
             >Privacy</a
           >
           <a
-            href="https://github.com/DanLang1/ultimatestatsweb/issues"
+            href="https://groups.google.com/g/u-stat-closed-test"
             target="_blank"
             class="text-[var(--text-app)] opacity-60 hover:opacity-100 hover:text-[var(--accent-color)] transition-all"
-            >Report a Problem</a
+            >Feedback</a
           >
         </div>
         <div
