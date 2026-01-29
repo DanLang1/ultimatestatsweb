@@ -1,8 +1,8 @@
-# Ultimate Stats Website
+# U-STAT Website
 
-Landing page for **Ultimate Stats** — a mobile app for tracking Ultimate Frisbee game statistics.
+Landing page for **U-STAT** — a mobile app for tracking Ultimate Frisbee game statistics.
 
-## About Ultimate Stats
+## About U-STAT
 
 I started building this app to learn React Native, and as I started adding more features it slowly became a stat tracker for Ultimate Frisbee.
 
