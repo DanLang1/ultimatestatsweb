@@ -1,9 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ThemeToggle from "../components/ThemeToggle";
+import { Icon } from "astro-icon/components";
 ---
 
-<Layout title="U-Stat">
+<Layout title="UStat">
   <!-- Noise texture overlay -->
   <div class="noise-overlay"></div>
 
@@ -19,33 +20,21 @@ import ThemeToggle from "../components/ThemeToggle";
     >
       <div class="flex items-center gap-3 select-none">
         <div class="text-2xl font-black tracking-tighter">
-          <span class="text-[var(--accent-color)]">U-</span>STAT
+          <span class="text-[var(--accent-color)]">U</span>STAT
         </div>
       </div>
       <ThemeToggle client:load />
     </header>
 
-    <main class="container mx-auto px-6 pb-12 md:pb-20 relative z-10">
+    <main class="container mx-auto px-6 pb-12 md:pb-8 relative z-10">
       <!-- Hero -->
-      <section class="pt-4 pb-12 md:pb-20 text-center max-w-4xl mx-auto">
+      <section class="pt-4 pb-6 md:pb-10 text-center max-w-4xl mx-auto">
         <p
           class="text-2xl md:text-3xl font-bold mb-10 max-w-3xl mx-auto leading-tight animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300"
         >
           Scoreboard + stat tracking for Ultimate.
         </p>
-        <!-- <div class="flex flex-col md:flex-row justify-center items-center md:items-start gap-4 animate-in fade-in slide-in-from-bottom-7 duration-700 delay-500">
-          <div class="flex flex-col items-center gap-2">
-            <button class="bg-[var(--accent-color)] text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all transform hover:-translate-y-1 active:scale-95 cursor-not-allowed opacity-80">
-              Coming Soon to iOS
-            </button>
-            <p class="text-xs opacity-50 italic">
-              I need a MacBook first.
-            </p>
-          </div>
-          <a href="#features" class="px-8 py-4 rounded-full font-bold text-lg border border-[var(--border-color)] hover:bg-[var(--bg-card)] transition-colors">
-            Learn More
-          </a>
-        </div> -->
+
         <!-- Compact Badges -->
         <div
           class="flex flex-wrap justify-center gap-4 sm:gap-6 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500"
@@ -89,93 +78,34 @@ import ThemeToggle from "../components/ThemeToggle";
             </div>
           </div>
         </div>
-
-        <!-- Beta Join CTA -->
-        <div
-          class="mt-10 p-6 rounded-2xl bg-gradient-to-r from-[var(--color-emerald-500)]/10 to-[var(--color-blue-600)]/10 border border-[var(--color-emerald-500)]/30 max-w-xl mx-auto animate-in fade-in slide-in-from-bottom-9 duration-700 delay-700"
-        >
-          <div class="flex items-center justify-center gap-2 mb-3">
-            <h3 class="text-lg font-bold">
-              Help me get this on the playstore!
-            </h3>
-          </div>
-          <p class="text-sm opacity-70 mb-4 text-center">
-            For best chances of getting this approved I need to run a closed
-            testing group for 14 days. It helps if you use the app at least once
-            a day.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="https://groups.google.com/g/u-stat-closed-test"
-              target="_blank"
-              class="inline-flex items-center justify-center gap-2 bg-[var(--color-emerald-500)] text-white px-5 py-2.5 rounded-xl font-bold hover:brightness-110 transition-all text-sm"
-            >
-              <span>1. Join Test Group</span>
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                ></path></svg
-              >
-            </a>
-            <a
-              href="https://play.google.com/store/apps/details?id=com.langdk.ultimatestats"
-              target="_blank"
-              class="inline-flex items-center justify-center gap-2 bg-[var(--accent-color)] text-white px-5 py-2.5 rounded-xl font-bold hover:brightness-110 transition-all text-sm"
-            >
-              <span>2. Get on Play Store</span>
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                ></path></svg
-              >
-            </a>
-          </div>
-          <p class="text-xs opacity-50 mt-4 text-center italic">
-            If I ever add paywalls for future features, if you beta tested
-            you'll get them for free
-          </p>
-        </div>
       </section>
 
       <!-- App Preview Screenshots -->
-      <section class="mb-16 md:mb-32 relative">
-        <div class="max-w-4xl mx-auto">
-          <!-- Segmented Control -->
-          <div class="flex justify-center mb-8">
-            <div
-              class="inline-flex bg-[var(--bg-card)] rounded-full p-1 border border-[var(--border-color)]"
+      <section class="mt-8 md:mt-12 mb-16 md:mb-16 relative">
+        <!-- Segmented Control -->
+        <div class="flex justify-center mb-8">
+          <div
+            class="inline-flex bg-[var(--bg-card)] rounded-full p-1 border border-[var(--border-color)]"
+          >
+            <button
+              id="tab-scoreboard"
+              class="screenshot-tab px-6 py-2.5 rounded-full font-bold text-sm transition-all bg-[var(--accent-color)] text-white flex items-center gap-2"
+              onclick="showScreenshot('scoreboard')"
             >
-              <button
-                id="tab-scoreboard"
-                class="screenshot-tab px-6 py-2.5 rounded-full font-bold text-sm transition-all bg-[var(--accent-color)] text-white"
-                onclick="showScreenshot('scoreboard')"
-              >
-                🏆 Scoreboard
-              </button>
-              <button
-                id="tab-player-stats"
-                class="screenshot-tab px-6 py-2.5 rounded-full font-bold text-sm transition-all text-[var(--text-app)] opacity-70 hover:opacity-100"
-                onclick="showScreenshot('player-stats')"
-              >
-                📊 Stats
-              </button>
-            </div>
+              <Icon name="lucide:trophy" class="w-[18px] h-[18px]" />
+              Scoreboard
+            </button>
+            <button
+              id="tab-player-stats"
+              class="screenshot-tab px-6 py-2.5 rounded-full font-bold text-sm transition-all text-[var(--text-app)] opacity-70 hover:opacity-100 flex items-center gap-2"
+              onclick="showScreenshot('player-stats')"
+            >
+              <Icon name="lucide:bar-chart-3" class="w-[18px] h-[18px]" />
+              Stats
+            </button>
           </div>
-
+        </div>
+        <div class="max-w-4xl mx-auto">
           <!-- Video -->
           <div
             class="relative bg-gradient-to-b from-[var(--bg-card)] to-transparent rounded-3xl p-8 border border-[var(--border-color)]"
@@ -183,14 +113,16 @@ import ThemeToggle from "../components/ThemeToggle";
             <div class="max-w-4xl mx-auto">
               <!-- Scoreboard Video -->
               <div id="screenshot-scoreboard" class="screenshot-panel">
-                <video
-                  src="/scoreboard.mp4"
-                  autoplay
-                  muted
-                  loop
-                  playsinline
-                  class="w-full h-auto rounded-2xl shadow-2xl border border-[var(--border-color)]"
-                ></video>
+                <div class="aspect-video w-full">
+                  <iframe
+                    src="https://www.youtube.com/embed/_xIN8lrM3zQ?autoplay=1&mute=1&loop=1&playlist=_xIN8lrM3zQ&playsinline=1"
+                    title="Scoreboard Preview"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    class="w-full h-full rounded-2xl shadow-2xl border border-[var(--border-color)]"
+                  ></iframe>
+                </div>
                 <p class="text-center mt-6 opacity-70 text-lg">
                   <strong>Tap to score</strong>, track turnovers from the
                   floating action bar
@@ -198,14 +130,16 @@ import ThemeToggle from "../components/ThemeToggle";
               </div>
               <!-- Player Stats Video -->
               <div id="screenshot-player-stats" class="screenshot-panel hidden">
-                <video
-                  src="/stats.mp4"
-                  autoplay
-                  muted
-                  loop
-                  playsinline
-                  class="w-full h-auto rounded-2xl shadow-2xl border border-[var(--border-color)]"
-                ></video>
+                <div class="aspect-video w-full">
+                  <iframe
+                    src="https://www.youtube.com/embed/YdbxByZsUDA?autoplay=1&mute=1&loop=1&playlist=YdbxByZsUDA&playsinline=1"
+                    title="Stats Preview"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    class="w-full h-full rounded-2xl shadow-2xl border border-[var(--border-color)]"
+                  ></iframe>
+                </div>
                 <p class="text-center mt-6 opacity-70 text-lg">
                   <strong>Team and Player Stats</strong> along with a game timeline
                 </p>
@@ -322,38 +256,38 @@ import ThemeToggle from "../components/ThemeToggle";
           {
             [
               {
-                icon: "🐛",
-                title: "Expect Bugs",
-                desc: `It's very likely that things may break as this is a solo hobby project. I have a full time job, but will do my best to fix things as soon as possible. <a href="https://groups.google.com/g/u-stat-closed-test" target="_blank" class="underline hover:text-[var(--accent-color)]">Report bugs or give feedback here</a>.`,
+                icon: "lucide:bug",
+                title: "Bugs Possible",
+                desc: `This is a new project, if you run into any issues feel free to report them on <a href="https://discord.gg/yQEamZ58CA" target="_blank" class="underline hover:text-[var(--accent-color)]">Discord</a>.`,
               },
               {
-                icon: "💰",
+                icon: "lucide:banknote",
                 title: "Future Features May Have Paywalls",
                 desc: "Basic stat tracking and everything currently developed will be free, but if I add cloud sync or more in depth stat tracking I may paywall that.",
               },
               {
-                icon: "🍎",
+                icon: "lucide:smartphone",
                 title: "iOS Coming Eventually",
                 desc: "This is built on React Native so in theory it should work on iOS, but I need a Macbook to fully build/test it.",
               },
               {
-                icon: "👤",
+                icon: "lucide:cloud-off",
                 title: "No Cloud Sync",
                 desc: "If you have multiple teammates tracking stats for the same team, the only way to share games is to export them to a CSV file.",
               },
               {
-                icon: "📊",
+                icon: "lucide:clipboard-list",
                 title: "Basic Event Tracking",
                 desc: "Only game events are tracked (goal, assist, drop, turn). Passes between players are not tracked. I have some ideas to handle this in the future, but it's a pretty large feature",
               },
               {
-                icon: "⏱️",
+                icon: "lucide:timer",
                 title: "USA Ultimate Format",
                 desc: "Made for standard USA Ultimate games. It isn't made for other formats like 4 quarters of 12 minutes for example.",
               },
             ].map((item) => (
               <div class="flex gap-4 p-5 rounded-xl bg-[var(--color-amber-500)]/5 border border-[var(--color-amber-500)]/20">
-                <span class="text-2xl shrink-0">{item.icon}</span>
+                <Icon name={item.icon} class="w-6 h-6 shrink-0 text-[var(--color-amber-500)]" />
                 <div>
                   <h3 class="font-bold mb-1">{item.title}</h3>
                   <p
@@ -366,46 +300,56 @@ import ThemeToggle from "../components/ThemeToggle";
           }
         </div>
       </section>
-    </main>
 
-    <footer
-      class="border-t border-[var(--border-color)] bg-[var(--bg-card)] py-12"
-    >
-      <div class="container mx-auto px-6 text-center">
-        <div class="flex justify-center gap-6 mb-8">
-          <!-- Social Links -->
-          <a
-            href="/privacy"
-            class="text-[var(--text-app)] opacity-60 hover:opacity-100 hover:text-[var(--accent-color)] transition-all"
-            >Privacy</a
-          >
-          <a
-            href="https://groups.google.com/g/u-stat-closed-test"
-            target="_blank"
-            class="text-[var(--text-app)] opacity-60 hover:opacity-100 hover:text-[var(--accent-color)] transition-all"
-            >Feedback</a
-          >
-        </div>
-        <div
-          class="inline-block bg-[var(--bg-input)] rounded-2xl p-6 border border-[var(--border-color)] max-w-sm"
-        >
-          <div class="flex items-center gap-2 justify-center mb-2">
-            <span class="text-2xl">🍎</span>
-            <p class="text-lg font-bold">Macbook Fund</p>
+      <footer
+        class="border-t border-[var(--border-color)] bg-[var(--bg-card)] py-12 w-screen left-1/2 -translate-x-1/2 relative"
+      >
+        <div class="container mx-auto px-6 text-center">
+          <div class="flex justify-center gap-6 mb-8">
+            <!-- Social Links -->
+            <a
+              href="/privacy"
+              class="text-[var(--text-app)] opacity-60 hover:opacity-100 hover:text-[var(--accent-color)] transition-all"
+              >Privacy</a
+            >
+            <a
+              href="https://discord.gg/yQEamZ58CA"
+              target="_blank"
+              class="text-[var(--text-app)] opacity-60 hover:opacity-100 hover:text-[var(--accent-color)] transition-all flex items-center gap-2"
+            >
+              <svg
+                class="w-5 h-5 fill-current"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"
+                ></path>
+              </svg>
+              <span>Join Discord</span>
+            </a>
           </div>
-          <p class="text-xs opacity-60 mb-4">
-            Any money I make from this app goes towards getting a Mac so I can
-            build the iOS version.
-          </p>
-          <a
-            href="https://account.venmo.com/u/Daniel-Lang-25"
-            target="_blank"
-            class="inline-flex items-center gap-2 bg-[#008CFF] text-white px-6 py-2.5 rounded-xl font-bold hover:brightness-110 transition-all shadow-lg shadow-blue-500/20"
+          <div
+            class="inline-block bg-[var(--bg-input)] rounded-2xl p-6 border border-[var(--border-color)] max-w-sm"
           >
-            <span>Contribute via Venmo</span>
-          </a>
+            <div class="flex items-center gap-2 justify-center mb-2">
+              <Icon name="lucide:laptop" class="w-6 h-6 text-[var(--color-blue-600)]" />
+              <p class="text-lg font-bold">Macbook Fund</p>
+            </div>
+            <p class="text-xs opacity-60 mb-4">
+              Any money I make from this app goes towards getting a Mac so I can
+              build the iOS version.
+            </p>
+            <a
+              href="https://account.venmo.com/u/Daniel-Lang-25"
+              target="_blank"
+              class="inline-flex items-center gap-2 bg-[#008CFF] text-white px-6 py-2.5 rounded-xl font-bold hover:brightness-110 transition-all shadow-lg shadow-blue-500/20"
+            >
+              <span>Contribute via Venmo</span>
+            </a>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </main>
   </div>
 </Layout>
