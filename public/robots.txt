@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://u-stat.app/sitemap-index.xml

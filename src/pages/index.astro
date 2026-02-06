@@ -4,7 +4,10 @@ import ThemeToggle from "../components/ThemeToggle";
 import { Icon } from "astro-icon/components";
 ---
 
-<Layout title="U-STAT">
+<Layout
+  title="U-STAT | Ultimate Frisbee Stat Tracker"
+  description="Ultimate Frisbee stat tracker and scoreboard. Track goals, assists, turnovers, and more."
+>
   <!-- Noise texture overlay -->
   <div class="noise-overlay"></div>
 
@@ -19,9 +22,9 @@ import { Icon } from "astro-icon/components";
       class="container mx-auto px-6 py-4 flex justify-between items-center relative z-10"
     >
       <div class="flex items-center gap-3 select-none">
-        <div class="text-2xl font-black tracking-tighter">
+        <h1 class="text-2xl font-black tracking-tighter">
           <span class="text-[var(--accent-color)]">U</span>-STAT
-        </div>
+        </h1>
       </div>
       <ThemeToggle client:load />
     </header>
@@ -32,7 +35,7 @@ import { Icon } from "astro-icon/components";
         <p
           class="text-2xl md:text-3xl font-bold mb-10 max-w-3xl mx-auto leading-tight animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300"
         >
-          Scoreboard + stat tracking for Ultimate.
+          Stat tracking for Ultimate.
         </p>
 
         <!-- Compact Badges -->
