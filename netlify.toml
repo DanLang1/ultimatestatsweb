@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://ustat.netlify.app/*"
+  to = "https://u-stat.app/:splat"
+  status = 301
+  force = true

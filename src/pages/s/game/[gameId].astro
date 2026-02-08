@@ -1,12 +1,13 @@
 ---
 export const prerender = false;
 
-import Layout from "../../layouts/Layout.astro";
-import ThemeToggle from "../../components/ThemeToggle";
+import Layout from "../../../layouts/Layout.astro";
+import ThemeToggle from "../../../components/ThemeToggle";
 import { Icon } from "astro-icon/components";
 
 const { gameId } = Astro.params;
-const deepLink = `ultimatestats://s/${gameId}`;
+const scheme = import.meta.env.PUBLIC_DEEP_LINK_SCHEME ?? "ultimatestats";
+const deepLink = `${scheme}://s/game/${gameId}`;
 const playStoreLink =
   "https://play.google.com/store/apps/details?id=com.langdk.ultimatestats";
 ---
@@ -38,7 +39,7 @@ const playStoreLink =
     </header>
 
     <main
-      class="container mx-auto px-6 pb-12 relative z-10 flex items-center justify-center"
+      class="container mx-auto px-6 pb-40 relative z-10 flex items-center justify-center"
       style="min-height: calc(100vh - 80px);"
     >
       <!-- Centered Content -->
@@ -50,7 +51,7 @@ const playStoreLink =
           />
           <h2 class="text-2xl md:text-3xl font-bold mb-2">Shared Game</h2>
           <p class="opacity-60 mb-8">
-            Open this game in the U-STAT app to view stats and timeline.
+            Open this game in the U-STAT app to view stats.
           </p>
         </div>
 
@@ -58,17 +59,6 @@ const playStoreLink =
         <div
           class="bg-[var(--bg-card)] rounded-2xl p-6 border border-[var(--border-color)] animate-in fade-in slide-in-from-bottom-6 duration-700 delay-200"
         >
-          <!-- Game ID Badge -->
-          <div
-            class="inline-flex items-center gap-2 bg-[var(--bg-app)] border border-[var(--border-color)] rounded-full px-4 py-2 mb-6"
-          >
-            <Icon
-              name="lucide:gamepad-2"
-              class="w-4 h-4 text-[var(--color-emerald-500)]"
-            />
-            <span class="text-sm font-mono opacity-70">{gameId}</span>
-          </div>
-
           <!-- Actions -->
           <div class="flex flex-col gap-4">
             <!-- Open in App Button -->
@@ -85,15 +75,12 @@ const playStoreLink =
             </a>
 
             <!-- Divider -->
-            <div class="relative py-2">
-              <div class="absolute inset-0 flex items-center">
-                <div class="w-full border-t border-[var(--border-color)]"></div>
-              </div>
-              <div class="relative flex justify-center text-xs uppercase">
-                <span class="bg-[var(--bg-card)] px-3 opacity-50"
-                  >Don't have the app?</span
-                >
-              </div>
+            <div class="py-2 flex items-center gap-3">
+              <div class="h-px bg-[var(--border-color)] flex-grow"></div>
+              <span class="text-xs uppercase opacity-50"
+                >Don't have the app?</span
+              >
+              <div class="h-px bg-[var(--border-color)] flex-grow"></div>
             </div>
 
             <!-- Google Play Badge -->

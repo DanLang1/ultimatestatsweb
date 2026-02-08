@@ -1,0 +1,117 @@
+---
+export const prerender = false;
+
+import Layout from "../../../layouts/Layout.astro";
+import ThemeToggle from "../../../components/ThemeToggle";
+import { Icon } from "astro-icon/components";
+
+const { teamId } = Astro.params;
+const scheme = import.meta.env.PUBLIC_DEEP_LINK_SCHEME ?? "ultimatestats";
+const deepLink = `${scheme}://s/team/${teamId}`;
+const playStoreLink =
+  "https://play.google.com/store/apps/details?id=com.langdk.ultimatestats";
+---
+
+<Layout
+  title="Shared Team | U-STAT"
+  description="View this team on U-STAT, the ultimate frisbee stat tracking app."
+>
+  <!-- Noise texture overlay -->
+  <div class="noise-overlay"></div>
+
+  <div class="relative overflow-hidden w-full min-h-screen">
+    <!-- Gradient Background Accent -->
+    <div
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-[radial-gradient(ellipse_at_top,var(--color-blue-600)_0%,transparent_70%)] opacity-10 dark:opacity-20 pointer-events-none"
+    >
+    </div>
+
+    <!-- Header -->
+    <header
+      class="container mx-auto px-6 py-4 flex justify-between items-center relative z-10"
+    >
+      <a href="/" class="flex items-center gap-3 select-none">
+        <h1 class="text-2xl font-black tracking-tighter">
+          <span class="text-[var(--accent-color)]">U</span>-STAT
+        </h1>
+      </a>
+      <ThemeToggle client:load />
+    </header>
+
+    <main
+      class="container mx-auto px-6 pb-40 relative z-10 flex items-center justify-center"
+      style="min-height: calc(100vh - 80px);"
+    >
+      <!-- Centered Content -->
+      <section class="text-center max-w-md w-full">
+        <div class="animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <Icon
+            name="lucide:users"
+            class="w-10 h-10 mx-auto mb-4 text-[var(--accent-color)]"
+          />
+          <h2 class="text-2xl md:text-3xl font-bold mb-2">Shared Team</h2>
+          <p class="opacity-60 mb-8">
+            Open this team in the U-STAT app to view roster.
+          </p>
+        </div>
+
+        <!-- Main Card -->
+        <div
+          class="bg-[var(--bg-card)] rounded-2xl p-6 border border-[var(--border-color)] animate-in fade-in slide-in-from-bottom-6 duration-700 delay-200"
+        >
+          <!-- Actions -->
+          <div class="flex flex-col gap-4">
+            <!-- Open in App Button -->
+            <a
+              id="open-app-btn"
+              href={deepLink}
+              class="group flex items-center justify-center gap-3 w-full bg-[var(--accent-color)] text-white font-bold py-4 px-6 rounded-xl hover:brightness-110 transition-all shadow-lg shadow-blue-500/20 active:scale-95"
+            >
+              <Icon
+                name="lucide:external-link"
+                class="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+              />
+              <span>Open in U-STAT</span>
+            </a>
+
+            <!-- Divider -->
+            <div class="py-2 flex items-center gap-3">
+              <div class="h-px bg-[var(--border-color)] flex-grow"></div>
+              <span class="text-xs uppercase opacity-50"
+                >Don't have the app?</span
+              >
+              <div class="h-px bg-[var(--border-color)] flex-grow"></div>
+            </div>
+
+            <!-- Google Play Badge -->
+            <a
+              href={playStoreLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block hover:scale-105 transition-transform mx-auto"
+            >
+              <img
+                alt="Get it on Google Play"
+                src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                class="h-14"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</Layout>
+
+<script define:vars={{ deepLink }}>
+  // Attempt to open the app automatically on mobile
+  window.addEventListener("load", () => {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      setTimeout(() => {
+        window.location.href = deepLink;
+      }, 500);
+    }
+  });
+</script>
