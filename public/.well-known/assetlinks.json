@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.langdk.ultimatestats",
+      "sha256_cert_fingerprints": [
+        "7E:56:8F:A6:D4:AC:77:D9:00:BA:19:38:12:A4:B1:AF:93:39:03:06:5F:A9:B1:65:2D:C0:45:07:65:78:D8:7B"
+      ]
+    }
+  }
+]
