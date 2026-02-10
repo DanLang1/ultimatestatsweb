@@ -32,23 +32,48 @@ import Layout from "../layouts/Layout.astro";
 
       <div class="prose prose-invert lg:prose-xl space-y-8 opacity-90">
         <section>
-          <h2 class="text-2xl font-bold mb-4">
-            This app doesn't collect any data
-          </h2>
+          <h2 class="text-2xl font-bold mb-4">Data Storage</h2>
           <p class="leading-relaxed">
-            Everything is stored locally on your device (specifically, the app
-            uses AsyncStorage). Currently there is no server or 'cloud' to
-            upload your games to. If you delete the app or clear your cache,
-            your data is gone forever.
+            By default, everything is stored locally on your device. If you
+            uninstall the app or clear your cache, your teams, games, etc is all
+            gone forever.
           </p>
-          <p class="leading-relaxed mt-4">
-            This app also doesn't require any permissions to function. It
-            doesn't have access to your files, location, camera, or microphone.
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold mb-4">Link Sharing</h2>
+          <p class="leading-relaxed">
+            If you choose to share a game or team via a link, that data is
+            stored on a database for 30 days.
+          </p>
+          <ul class="list-disc ml-6 mt-4 space-y-2 leading-relaxed">
+            <li>
+              <strong>Public Access:</strong> Anyone with the shared link can view
+              the team and game data associated with it. This includes player names,
+              game stats, lines, etc.
+            </li>
+            <li>
+              <strong>Expiration:</strong> Shared links are deleted after 30 days.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold mb-4">Permissions</h2>
+          <p class="leading-relaxed">
+            This app does not require any special permissions to function. It
+            doesn't have access to your system files, location, camera, or
+            microphone.
+          </p>
+          <p class="leading-relaxed mt-4 italic opacity-80">
+            Note: If you use the "Export to CSV" feature, the app generates a
+            file for you to download. This is a one-way action; the app cannot
+            see or access any other files on your device.
           </p>
         </section>
 
         <footer class="pt-20 text-sm opacity-50">
-          Last updated: Jan 2, 2026.
+          Last updated: Feb 10, 2026.
         </footer>
       </div>
     </main>
