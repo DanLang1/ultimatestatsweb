@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "UFY8DT623F.com.langdk.ultimatestats",
+        "paths": ["/s/game/*", "/s/team/*", "/s/games/*"]
+      }
+    ]
+  }
+}
