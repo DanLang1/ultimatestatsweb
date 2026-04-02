@@ -82,9 +82,9 @@ import { Icon } from "astro-icon/components";
           </div>
         </div>
 
-        <!-- Google Play Badge -->
+        <!-- App Store Badges -->
         <div
-          class="mt-10 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-700"
+          class="mt-10 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-700 flex flex-wrap justify-center gap-4"
         >
           <a
             href="https://play.google.com/store/apps/details?id=com.langdk.ultimatestats"
@@ -95,6 +95,17 @@ import { Icon } from "astro-icon/components";
               alt="Get it on Google Play"
               src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
               class="h-16 md:h-20"
+            />
+          </a>
+          <a
+            href="https://apps.apple.com/us/app/u-stat/id6760956387"
+            target="_blank"
+            class="inline-flex items-center hover:scale-105 transition-transform"
+          >
+            <img
+              alt="Download on the App Store"
+              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+              class="h-10 md:h-[3.25rem]"
             />
           </a>
         </div>
@@ -144,10 +155,6 @@ import { Icon } from "astro-icon/components";
                     class="w-full h-full rounded-2xl shadow-2xl border border-[var(--border-color)]"
                   ></iframe>
                 </div>
-                <p class="text-center mt-6 opacity-70 text-lg">
-                  <strong>Tap to score</strong>, track turnovers from the
-                  floating action bar
-                </p>
               </div>
               <!-- Player Stats Video -->
               <div id="screenshot-player-stats" class="screenshot-panel hidden">
@@ -162,9 +169,6 @@ import { Icon } from "astro-icon/components";
                     class="w-full h-full rounded-2xl shadow-2xl border border-[var(--border-color)]"
                   ></iframe>
                 </div>
-                <p class="text-center mt-6 opacity-70 text-lg">
-                  <strong>Team and Player Stats</strong> along with a game timeline
-                </p>
               </div>
             </div>
           </div>
@@ -193,196 +197,79 @@ import { Icon } from "astro-icon/components";
         }
       </script>
 
-      <!-- Showcase Section -->
-      <section class="py-12 md:py-16 max-w-4xl mx-auto px-6">
-        <div
-          class="bg-gradient-to-br from-[var(--bg-card)] to-[var(--bg-app)] rounded-3xl p-8 border border-[var(--border-color)] relative overflow-hidden group shadow-xl"
-        >
-          <!-- Background Decoration -->
-          <div
-            class="absolute -top-24 -right-24 w-64 h-64 bg-[var(--accent-color)] opacity-[0.03] rounded-full blur-3xl group-hover:opacity-[0.05] transition-opacity"
-          >
-          </div>
 
-          <div
-            class="relative z-10 flex flex-col md:flex-row items-center gap-8"
-          >
-            <div class="flex-grow text-center md:text-left">
-              <h2 class="text-3xl font-black mb-4 tracking-tight">
-                Try it out
-              </h2>
-              <p class="text-lg opacity-70 mb-8 max-w-xl">
-                Check out stats from Team USA vs Canada at the 2025 World Games
-                Finals.
-              </p>
-              <a
-                href="/s/game/upxird"
-                class="inline-flex items-center gap-3 bg-[var(--accent-color)] text-white font-black py-4 px-8 rounded-2xl hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-blue-500/20"
-              >
-                <span>View Team USA Stats</span>
-                <Icon
-                  name="lucide:arrow-right"
-                  class="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                />
-              </a>
-            </div>
-
-            <div class="shrink-0 w-full md:w-auto">
-              <div
-                class="bg-[var(--bg-app)] border border-[var(--border-color)] rounded-2xl p-4 shadow-inner transform md:rotate-2 hover:rotate-0 transition-transform duration-500"
-              >
-                <div
-                  class="flex items-center justify-between mb-4 border-b border-[var(--border-color)] pb-3"
-                >
-                  <div
-                    class="text-[10px] opacity-40 font-mono tracking-widest uppercase"
-                  >
-                    World Games Finals
-                  </div>
-                </div>
-                <!-- Mini Score Mockup -->
-                <div class="space-y-3 min-w-[200px]">
-                  <div
-                    class="flex justify-between items-center bg-[var(--bg-card)] p-3 rounded-xl border border-[var(--border-color)]"
-                  >
-                    <span class="font-bold">USA</span>
-                    <span class="text-2xl font-black text-[var(--accent-color)]"
-                      >13</span
-                    >
-                  </div>
-                  <div
-                    class="flex justify-between items-center bg-[var(--bg-card)] p-3 rounded-xl border border-[var(--border-color)]"
-                  >
-                    <span class="font-bold opacity-60">Canada</span>
-                    <span class="text-2xl font-black opacity-40">12</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Features Grid -->
+      <!-- Features -->
       <section
         id="features"
         class="relative py-12 md:py-20 bg-[var(--bg-card)] w-screen left-1/2 -translate-x-1/2"
       >
-        <div class="max-w-6xl mx-auto px-6">
-          <!-- Section header -->
-          <div class="text-center max-w-3xl mx-auto mb-12">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-4">
-              <span
-                class="bg-gradient-to-r from-[var(--color-blue-600)] to-[var(--color-emerald-500)] text-transparent bg-clip-text"
-                >Info / Features</span
-              >
-            </h2>
-          </div>
-
-          <!-- Features grid -->
-          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="max-w-2xl mx-auto px-6">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-10">Info / Features</h2>
+          <div>
             {
               [
                 {
-                  icon: "lucide:sliders-horizontal",
-                  title: "Customizable",
-                  desc: "Dark and light mode, color customizations, settings to allow simple scoreboard or more involved stat tracking.",
-                  color: "var(--color-blue-600)",
+                  title: "Import Team from USA Ultimate",
+                  desc: "Paste a USAU team link and the app will import the roster.",
                 },
                 {
-                  icon: "lucide:users",
                   title: "Gender Ratio Tracking",
                   desc: "Supports Ratio Rule A (ABBA) gender ratio tracking.",
-                  color: "var(--color-emerald-500)",
                 },
                 {
-                  icon: "lucide:sparkles",
                   title: "Stat Insights",
                   desc: "Player impact, team offensive/defensive efficiency, average point length, and more.",
-                  color: "var(--color-amber-500)",
                 },
                 {
-                  icon: "lucide:handshake",
                   title: "Share Data",
                   desc: "Share teams and games with a link, or export raw data as CSV.",
-                  color: "var(--color-blue-600)",
                 },
                 {
-                  icon: "lucide:timer",
                   title: "Game Timing",
                   desc: "Hardcap, softcap, timeout, point length, and even halftime timers built in.",
-                  color: "var(--color-rose-500)",
                 },
                 {
-                  icon: "lucide:layers",
                   title: "Aggregate Games",
                   desc: "View stats from multiple games to track trends and performance over time.",
-                  color: "var(--color-emerald-500)",
                 },
-              ].map((f, i) => (
-                <div
-                  class="bg-[var(--bg-app)] p-6 rounded-2xl border border-[var(--border-color)] hover:border-[var(--accent-color)] transition-all group hover:-translate-y-1"
-                  style={`animation-delay: ${i * 100}ms`}
-                >
-                  <div
-                    class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110"
-                    style={`background: color-mix(in srgb, ${f.color} 15%, transparent); color: ${f.color};`}
-                  >
-                    <Icon name={f.icon} class="w-6 h-6" />
-                  </div>
-                  <h3 class="text-lg font-bold mb-2">{f.title}</h3>
-                  <p class="opacity-70 text-sm">{f.desc}</p>
+              ].map((f) => (
+                <div class="py-5 border-t border-[var(--border-color)] flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+                  <span class="font-semibold text-sm shrink-0 sm:w-48">{f.title}</span>
+                  <span class="opacity-60 text-sm">{f.desc}</span>
                 </div>
               ))
             }
+            <div class="border-t border-[var(--border-color)]"></div>
           </div>
         </div>
       </section>
 
       <!-- Limitations -->
-      <section class="py-10 md:py-16 max-w-3xl mx-auto">
-        <h2 class="text-2xl font-bold mb-8 text-center opacity-70">
-          Limitations/Cons
-        </h2>
-        <div class="space-y-4">
+      <section class="py-10 md:py-16 max-w-2xl mx-auto px-6">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-10">Limitations/Cons</h2>
+        <div>
           {
             [
               {
-                icon: "lucide:bug",
                 title: "Bugs Possible",
                 desc: `This is a new project, if you run into any issues feel free to report them on <a href="https://discord.gg/yQEamZ58CA" target="_blank" class="underline hover:text-[var(--accent-color)]">Discord</a>.`,
               },
               {
-                icon: "lucide:banknote",
                 title: "Future Features May Have Paywalls",
                 desc: "Basic stat tracking and everything currently developed will be free, but if I add cloud sync or more in depth stat tracking I may paywall that.",
               },
               {
-                icon: "lucide:smartphone",
-                title: "iOS Coming Eventually",
-                desc: "This is built on React Native so in theory it should work on iOS, but I need a Macbook to fully build/test it.",
-              },
-              {
-                icon: "lucide:clipboard-list",
                 title: "Basic Event Tracking",
-                desc: "Only game events are tracked (goal, assist, drop, turn). Passes between players are not tracked. I have some ideas to handle this in the future, but it's a pretty large feature",
+                desc: "Only game events are tracked (goal, assist, drop, turn). Passes between players are not tracked. I have some ideas to handle this in the future, but it's a pretty large feature.",
               },
             ].map((item) => (
-              <div class="flex gap-4 p-5 rounded-xl bg-[var(--color-amber-500)]/5 border border-[var(--color-amber-500)]/20">
-                <Icon
-                  name={item.icon}
-                  class="w-6 h-6 shrink-0 text-[var(--color-amber-500)]"
-                />
-                <div>
-                  <h3 class="font-bold mb-1">{item.title}</h3>
-                  <p
-                    class="opacity-60 text-sm leading-relaxed"
-                    set:html={item.desc}
-                  />
-                </div>
+              <div class="py-5 border-t border-[var(--border-color)] flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+                <span class="font-semibold text-sm shrink-0 sm:w-48">{item.title}</span>
+                <span class="opacity-60 text-sm" set:html={item.desc} />
               </div>
             ))
           }
+          <div class="border-t border-[var(--border-color)]"></div>
         </div>
       </section>
 
@@ -418,11 +305,10 @@ import { Icon } from "astro-icon/components";
                 name="lucide:laptop"
                 class="w-6 h-6 text-[var(--color-blue-600)]"
               />
-              <p class="text-lg font-bold">Macbook Fund</p>
+              <p class="text-lg font-bold">Apple Developer Subscription</p>
             </div>
             <p class="text-xs opacity-60 mb-4">
-              Any money I make from this app goes towards getting a Mac so I can
-              build the iOS version.
+              Any money I make from this app goes towards the Apple Developer subscription to keep the iOS version available.
             </p>
             <a
               href="https://account.venmo.com/u/Daniel-Lang-25"
