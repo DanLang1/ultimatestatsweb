@@ -10,6 +10,7 @@ const scheme = import.meta.env.PUBLIC_DEEP_LINK_SCHEME ?? "ultimatestats";
 const deepLink = `${scheme}://s/games/${gamesId}`;
 const playStoreLink =
   "https://play.google.com/store/apps/details?id=com.langdk.ultimatestats";
+const appStoreLink = "https://apps.apple.com/us/app/u-stat/id6760956387";
 ---
 
 <Layout
@@ -83,19 +84,33 @@ const playStoreLink =
               <div class="h-px bg-[var(--border-color)] flex-grow"></div>
             </div>
 
-            <!-- Google Play Badge -->
-            <a
-              href={playStoreLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-block hover:scale-105 transition-transform mx-auto"
-            >
-              <img
-                alt="Get it on Google Play"
-                src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-                class="h-14"
-              />
-            </a>
+            <!-- Store Badges -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-2">
+              <a
+                href={playStoreLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block hover:scale-105 transition-transform"
+              >
+                <img
+                  alt="Get it on Google Play"
+                  src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                  class="h-14"
+                />
+              </a>
+              <a
+                href={appStoreLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block hover:scale-105 transition-transform"
+              >
+                <img
+                  alt="Download on the App Store"
+                  src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                  class="h-10 my-2"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </section>
