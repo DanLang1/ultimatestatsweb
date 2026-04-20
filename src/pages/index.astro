@@ -84,12 +84,12 @@ import { Icon } from "astro-icon/components";
 
         <!-- App Store Badges -->
         <div
-          class="mt-10 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-700 flex flex-wrap justify-center gap-4"
+          class="mt-10 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-700 flex flex-wrap justify-center gap-2"
         >
           <a
             href="https://play.google.com/store/apps/details?id=com.langdk.ultimatestats"
             target="_blank"
-            class="inline-flex items-center justify-center h-16 md:h-20 px-3 rounded-2xl hover:scale-105 transition-transform"
+            class="inline-flex items-center justify-center h-16 md:h-20 rounded-2xl hover:scale-105 transition-transform"
           >
             <img
               alt="Get it on Google Play"
@@ -100,12 +100,12 @@ import { Icon } from "astro-icon/components";
           <a
             href="https://apps.apple.com/us/app/u-stat/id6760956387"
             target="_blank"
-            class="inline-flex items-center justify-center h-16 md:h-20 px-3 rounded-2xl hover:scale-105 transition-transform"
+            class="inline-flex items-center justify-center h-16 md:h-20 rounded-2xl hover:scale-105 transition-transform"
           >
             <img
               alt="Download on the App Store"
               src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-              class="h-11 md:h-14 w-auto"
+              class="h-11 md:h-[52px] w-auto"
             />
           </a>
         </div>
@@ -119,35 +119,35 @@ import { Icon } from "astro-icon/components";
             class="inline-flex bg-[var(--bg-card)] rounded-full p-1 border border-[var(--border-color)]"
           >
             <button
-              id="tab-scoreboard"
-              class="screenshot-tab px-6 py-2.5 rounded-full font-bold text-sm transition-all bg-[var(--accent-color)] text-white flex items-center gap-2"
-              onclick="showScreenshot('scoreboard')"
-            >
-              <Icon name="lucide:trophy" class="w-[18px] h-[18px]" />
-              Scoreboard
-            </button>
-            <button
               id="tab-player-stats"
-              class="screenshot-tab px-6 py-2.5 rounded-full font-bold text-sm transition-all text-[var(--text-app)] opacity-70 hover:opacity-100 flex items-center gap-2"
+              class="screenshot-tab px-6 py-2.5 rounded-full font-bold text-sm transition-all bg-[var(--accent-color)] text-white flex items-center gap-2"
               onclick="showScreenshot('player-stats')"
             >
               <Icon name="lucide:bar-chart-3" class="w-[18px] h-[18px]" />
               Stats
             </button>
+            <button
+              id="tab-scoreboard"
+              class="screenshot-tab px-6 py-2.5 rounded-full font-bold text-sm transition-all text-[var(--text-app)] opacity-70 hover:opacity-100 flex items-center gap-2"
+              onclick="showScreenshot('scoreboard')"
+            >
+              <Icon name="lucide:trophy" class="w-[18px] h-[18px]" />
+              Scoreboard
+            </button>
           </div>
         </div>
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-xs mx-auto">
           <!-- Video -->
           <div
-            class="relative bg-gradient-to-b from-[var(--bg-card)] to-transparent rounded-3xl p-4 sm:p-8 border border-[var(--border-color)]"
+            class="relative bg-gradient-to-b from-[var(--bg-card)] to-transparent rounded-3xl p-3 border border-[var(--border-color)]"
           >
-            <div class="max-w-4xl mx-auto">
-              <!-- Scoreboard Video -->
-              <div id="screenshot-scoreboard" class="screenshot-panel">
-                <div class="aspect-video w-full">
+            <div class="w-full">
+              <!-- Player Stats Video -->
+              <div id="screenshot-player-stats" class="screenshot-panel">
+                <div class="aspect-[9/16] w-full">
                   <iframe
-                    src="https://www.youtube.com/embed/_xIN8lrM3zQ?autoplay=1&mute=1&loop=1&playlist=_xIN8lrM3zQ&playsinline=1"
-                    title="Scoreboard Preview"
+                    src="https://www.youtube.com/embed/Bcg8e0wjTr8?autoplay=1&mute=1&loop=1&playlist=Bcg8e0wjTr8&playsinline=1"
+                    title="Stats Preview"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen
@@ -156,12 +156,12 @@ import { Icon } from "astro-icon/components";
                   ></iframe>
                 </div>
               </div>
-              <!-- Player Stats Video -->
-              <div id="screenshot-player-stats" class="screenshot-panel hidden">
-                <div class="aspect-video w-full">
+              <!-- Scoreboard Video -->
+              <div id="screenshot-scoreboard" class="screenshot-panel hidden">
+                <div class="aspect-[9/16] w-full">
                   <iframe
-                    src="https://www.youtube.com/embed/YdbxByZsUDA?autoplay=1&mute=1&loop=1&playlist=YdbxByZsUDA&playsinline=1"
-                    title="Stats Preview"
+                    src="https://www.youtube.com/embed/kGVAO2FMrOk?autoplay=1&mute=1&loop=1&playlist=kGVAO2FMrOk&playsinline=1"
+                    title="Scoreboard Preview"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen
