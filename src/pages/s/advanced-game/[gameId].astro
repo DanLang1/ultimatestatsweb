@@ -5,17 +5,17 @@ import Layout from "../../../layouts/Layout.astro";
 import ThemeToggle from "../../../components/ThemeToggle";
 import { Icon } from "astro-icon/components";
 
-const { gamesId } = Astro.params;
+const { gameId } = Astro.params;
 const scheme = import.meta.env.PUBLIC_DEEP_LINK_SCHEME ?? "ultimatestats";
-const deepLink = `${scheme}://s/games/${gamesId}`;
+const deepLink = `${scheme}://s/advanced-game/${gameId}`;
 const playStoreLink =
   "https://play.google.com/store/apps/details?id=com.langdk.ultimatestats";
 const appStoreLink = "https://apps.apple.com/us/app/u-stat/id6760956387";
 ---
 
 <Layout
-  title="Shared Games | U-STAT"
-  description="Import these games into U-STAT, the ultimate frisbee stat tracking app."
+  title="Shared Game | U-STAT"
+  description="View this advanced game on U-STAT, the ultimate frisbee stat tracking app."
 >
   <!-- Noise texture overlay -->
   <div class="noise-overlay"></div>
@@ -47,12 +47,12 @@ const appStoreLink = "https://apps.apple.com/us/app/u-stat/id6760956387";
       <section class="text-center max-w-md w-full">
         <div class="animate-in fade-in slide-in-from-bottom-4 duration-700">
           <Icon
-            name="lucide:layers"
+            name="lucide:share-2"
             class="w-10 h-10 mx-auto mb-4 text-[var(--accent-color)]"
           />
-          <h2 class="text-2xl md:text-3xl font-bold mb-2">Shared Games</h2>
+          <h2 class="text-2xl md:text-3xl font-bold mb-2">Shared Game</h2>
           <p class="opacity-60 mb-8">
-            Open these games in the U-STAT app to view stats.
+            Open this game in the U-STAT app to view stats.
           </p>
         </div>
 

@@ -7,7 +7,7 @@ import { Icon } from "astro-icon/components";
 
 const { gamesId } = Astro.params;
 const scheme = import.meta.env.PUBLIC_DEEP_LINK_SCHEME ?? "ultimatestats";
-const deepLink = `${scheme}://s/games/${gamesId}`;
+const deepLink = `${scheme}://s/advanced-games/${gamesId}`;
 const playStoreLink =
   "https://play.google.com/store/apps/details?id=com.langdk.ultimatestats";
 const appStoreLink = "https://apps.apple.com/us/app/u-stat/id6760956387";
@@ -15,7 +15,7 @@ const appStoreLink = "https://apps.apple.com/us/app/u-stat/id6760956387";
 
 <Layout
   title="Shared Games | U-STAT"
-  description="Import these games into U-STAT, the ultimate frisbee stat tracking app."
+  description="Import these advanced games into U-STAT, the ultimate frisbee stat tracking app."
 >
   <!-- Noise texture overlay -->
   <div class="noise-overlay"></div>
