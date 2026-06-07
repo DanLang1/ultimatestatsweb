@@ -84,9 +84,14 @@ import Layout from "../layouts/Layout.astro";
         <section>
           <h2 class="text-2xl font-bold mb-4">Permissions</h2>
           <p class="leading-relaxed">
-            This app does not require any special permissions to function. It
-            doesn't have access to your system files, location, camera, or
-            microphone.
+            This app may ask for access to your microphone if you choose to
+            enable voice tracking. Voice tracking is all done completely offline
+            via the on-device speech recognizer. Everything stays locally on
+            your device.
+          </p>
+          <p class="leading-relaxed">
+            This device will not ask for other permissions like file system
+            access or location.
           </p>
           <p class="leading-relaxed mt-4 italic opacity-80">
             Note: If you use the "Export to CSV" feature, the app generates a
@@ -96,7 +101,7 @@ import Layout from "../layouts/Layout.astro";
         </section>
 
         <footer class="pt-20 text-sm opacity-50">
-          Last updated: Feb 16, 2026.
+          Last updated: June 7, 2026.
         </footer>
       </div>
     </main>
