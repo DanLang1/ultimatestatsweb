@@ -2,7 +2,7 @@
 export const prerender = false;
 
 import Layout from "../../../layouts/Layout.astro";
-import ThemeToggle from "../../../components/ThemeToggle";
+import ThemeToggle from "../../../components/ThemeToggle.astro";
 import { Icon } from "astro-icon/components";
 
 const { gamesId } = Astro.params;
@@ -36,7 +36,7 @@ const appStoreLink = "https://apps.apple.com/us/app/u-stat/id6760956387";
           <span class="text-[var(--accent-color)]">U</span>-STAT
         </h1>
       </a>
-      <ThemeToggle client:load />
+      <ThemeToggle />
     </header>
 
     <main

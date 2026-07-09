@@ -1,2 +1,0 @@
-# Redirect old Netlify subdomain to custom domain
-https://ustat.netlify.app/* https://u-stat.app/:splat 301!

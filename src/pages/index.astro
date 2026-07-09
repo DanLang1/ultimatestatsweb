@@ -1,353 +1,374 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ThemeToggle from "../components/ThemeToggle";
+import ThemeToggle from "../components/ThemeToggle.astro";
 import { Icon } from "astro-icon/components";
 ---
 
 <Layout
-  title="U-STAT | Ultimate Frisbee Stat Tracker"
-  description="Ultimate Frisbee stat tracker and scoreboard. Track goals, assists, turnovers, and more."
+    title="U-STAT | Ultimate Frisbee Stat Tracker"
+    description="Ultimate Frisbee stat tracker and scoreboard. Track goals, assists, turnovers, and more."
 >
-  <!-- Noise texture overlay -->
-  <div class="noise-overlay"></div>
+    <!-- Noise texture overlay -->
+    <div class="noise-overlay"></div>
 
-  <div class="relative overflow-hidden w-full">
-    <!-- Gradient Background Accent -->
-    <div
-      class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-[radial-gradient(ellipse_at_top,var(--color-blue-600)_0%,transparent_70%)] opacity-10 dark:opacity-20 pointer-events-none"
-    >
+    <div class="relative overflow-hidden w-full">
+        <!-- Gradient Background Accent -->
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-[radial-gradient(ellipse_at_top,var(--color-blue-600)_0%,transparent_70%)] opacity-10 dark:opacity-20 pointer-events-none"
+        >
+        </div>
+
+        <header
+            class="container mx-auto px-6 py-4 flex justify-between items-center relative z-10"
+        >
+            <div class="flex items-center gap-3 select-none">
+                <h1 class="text-2xl font-black tracking-tighter">
+                    <span class="text-[var(--accent-color)]">U</span>-STAT
+                </h1>
+            </div>
+            <ThemeToggle />
+        </header>
+
+        <main class="container mx-auto px-6 pb-12 md:pb-8 relative z-10">
+            <!-- Hero -->
+            <section class="pt-4 pb-6 md:pb-10 text-center max-w-4xl mx-auto">
+                <p
+                    class="text-2xl md:text-3xl font-bold mb-10 max-w-3xl mx-auto leading-tight animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300"
+                >
+                    Stat tracking for Ultimate.
+                </p>
+
+                <!-- Compact Badges -->
+                <div
+                    class="flex flex-wrap justify-center gap-4 sm:gap-6 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500"
+                >
+                    <div class="text-center">
+                        <div
+                            class="text-lg sm:text-xl font-bold text-[var(--color-emerald-500)]"
+                        >
+                            Free!
+                        </div>
+                        <div class="text-xs opacity-50">
+                            No subscription / Ads
+                        </div>
+                    </div>
+                    <div
+                        class="hidden sm:block w-px h-10 bg-[var(--border-color)]"
+                    >
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="text-lg sm:text-xl font-bold text-[var(--color-amber-500)]"
+                        >
+                            No Login
+                        </div>
+                        <div class="text-xs opacity-50">No signup needed</div>
+                    </div>
+                    <div
+                        class="hidden sm:block w-px h-10 bg-[var(--border-color)]"
+                    >
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="text-lg sm:text-xl font-bold text-[var(--color-rose-500)]"
+                        >
+                            Offline
+                        </div>
+                        <div class="text-xs opacity-50">
+                            Data stored locally
+                        </div>
+                    </div>
+                    <div
+                        class="hidden sm:block w-px h-10 bg-[var(--border-color)]"
+                    >
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="text-lg sm:text-xl font-bold text-[var(--accent-color)]"
+                        >
+                            Open Source Coming
+                        </div>
+                        <div class="text-xs opacity-50">
+                            Need to clean my code up first*
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App Store Badges -->
+                <div
+                    class="mt-10 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-700 flex flex-wrap justify-center gap-2"
+                >
+                    <a
+                        href="https://play.google.com/store/apps/details?id=com.langdk.ultimatestats"
+                        target="_blank"
+                        class="inline-flex items-center justify-center h-16 md:h-20 rounded-2xl hover:scale-105 transition-transform"
+                    >
+                        <img
+                            alt="Get it on Google Play"
+                            src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                            class="h-full w-auto"
+                        />
+                    </a>
+                    <a
+                        href="https://apps.apple.com/us/app/u-stat/id6760956387"
+                        target="_blank"
+                        class="inline-flex items-center justify-center h-16 md:h-20 rounded-2xl hover:scale-105 transition-transform"
+                    >
+                        <img
+                            alt="Download on the App Store"
+                            src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                            class="h-11 md:h-[52px] w-auto"
+                        />
+                    </a>
+                </div>
+            </section>
+
+            <!-- App Preview Screenshots -->
+            <section class="mb-16 md:mb-16 relative">
+                <!-- Segmented Control -->
+                <div class="flex justify-center mb-8">
+                    <div
+                        class="inline-flex bg-[var(--bg-card)] rounded-full p-1 border border-[var(--border-color)]"
+                    >
+                        <button
+                            id="tab-player-stats"
+                            class="screenshot-tab px-6 py-2.5 rounded-full font-bold text-sm transition-all bg-[var(--accent-color)] text-white flex items-center gap-2"
+                            onclick="showScreenshot('player-stats')"
+                        >
+                            <Icon
+                                name="lucide:bar-chart-3"
+                                class="w-[18px] h-[18px]"
+                            />
+                            Stats
+                        </button>
+                        <button
+                            id="tab-scoreboard"
+                            class="screenshot-tab px-6 py-2.5 rounded-full font-bold text-sm transition-all text-[var(--text-app)] opacity-70 hover:opacity-100 flex items-center gap-2"
+                            onclick="showScreenshot('scoreboard')"
+                        >
+                            <Icon
+                                name="lucide:trophy"
+                                class="w-[18px] h-[18px]"
+                            />
+                            Scoreboard
+                        </button>
+                    </div>
+                </div>
+                <div class="max-w-xs mx-auto">
+                    <!-- Video -->
+                    <div
+                        class="relative bg-gradient-to-b from-[var(--bg-card)] to-transparent rounded-3xl p-3 border border-[var(--border-color)]"
+                    >
+                        <div class="w-full">
+                            <!-- Player Stats Video -->
+                            <div
+                                id="screenshot-player-stats"
+                                class="screenshot-panel"
+                            >
+                                <div class="aspect-[9/16] w-full">
+                                    <iframe
+                                        src="https://www.youtube.com/embed/Bcg8e0wjTr8?autoplay=1&mute=1&loop=1&playlist=Bcg8e0wjTr8&playsinline=1"
+                                        title="Stats Preview"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen
+                                        loading="lazy"
+                                        class="w-full h-full rounded-2xl shadow-2xl border border-[var(--border-color)]"
+                                    ></iframe>
+                                </div>
+                            </div>
+                            <!-- Scoreboard Video -->
+                            <div
+                                id="screenshot-scoreboard"
+                                class="screenshot-panel hidden"
+                            >
+                                <div class="aspect-[9/16] w-full">
+                                    <iframe
+                                        src="https://www.youtube.com/embed/kGVAO2FMrOk?autoplay=1&mute=1&loop=1&playlist=kGVAO2FMrOk&playsinline=1"
+                                        title="Scoreboard Preview"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen
+                                        loading="lazy"
+                                        class="w-full h-full rounded-2xl shadow-2xl border border-[var(--border-color)]"
+                                    ></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <script is:inline>
+                function showScreenshot(name) {
+                    // Hide all panels
+                    document
+                        .querySelectorAll(".screenshot-panel")
+                        .forEach((panel) => {
+                            panel.classList.add("hidden");
+                        });
+                    // Show selected panel
+                    document
+                        .getElementById("screenshot-" + name)
+                        .classList.remove("hidden");
+
+                    // Update tab styles for segmented control
+                    document
+                        .querySelectorAll(".screenshot-tab")
+                        .forEach((tab) => {
+                            tab.classList.remove(
+                                "bg-[var(--accent-color)]",
+                                "text-white",
+                            );
+                            tab.classList.add("opacity-70");
+                        });
+                    const activeTab = document.getElementById("tab-" + name);
+                    activeTab.classList.add(
+                        "bg-[var(--accent-color)]",
+                        "text-white",
+                    );
+                    activeTab.classList.remove("opacity-70");
+                }
+            </script>
+
+            <!-- Features -->
+            <section
+                id="features"
+                class="relative py-12 md:py-20 bg-[var(--bg-card)] w-screen left-1/2 -translate-x-1/2"
+            >
+                <div class="max-w-2xl mx-auto px-6">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-10">
+                        Info / Features
+                    </h2>
+                    <div>
+                        {
+                            [
+                                {
+                                    title: "Import Team from USA Ultimate",
+                                    desc: "Paste a USAU team link and the app will import the roster.",
+                                },
+                                {
+                                    title: "Gender Ratio Tracking",
+                                    desc: "Supports Ratio Rule A (ABBA) gender ratio tracking.",
+                                },
+                                {
+                                    title: "Stat Insights",
+                                    desc: "Player impact, pull tracking, time of possession, chemistry maps, and more.",
+                                },
+                                {
+                                    title: "Share Data",
+                                    desc: "Share teams and games with a link, or export raw data as CSV.",
+                                },
+                                {
+                                    title: "Game Timing",
+                                    desc: "Hardcap, softcap, timeout, point length timers built in.",
+                                },
+                                {
+                                    title: "Aggregate Games",
+                                    desc: "View stats from multiple games to track trends and performance over time.",
+                                },
+                            ].map((f) => (
+                                <div class="py-5 border-t border-[var(--border-color)] flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+                                    <span class="font-semibold text-sm shrink-0 sm:w-48">
+                                        {f.title}
+                                    </span>
+                                    <span class="opacity-60 text-sm">
+                                        {f.desc}
+                                    </span>
+                                </div>
+                            ))
+                        }
+                        <div class="border-t border-[var(--border-color)]">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer
+                class="border-t border-[var(--border-color)] bg-[var(--bg-card)] py-12 w-screen left-1/2 -translate-x-1/2 relative"
+            >
+                <div class="container mx-auto px-6 text-center">
+                    <div
+                        class="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 mb-8"
+                    >
+                        <!-- Social Links -->
+                        <a
+                            href="https://play.google.com/store/apps/details?id=com.langdk.ultimatestats"
+                            target="_blank"
+                            class="inline-flex items-center gap-2 text-[var(--text-app)] opacity-60 hover:opacity-100 hover:text-[var(--accent-color)] transition-all"
+                            aria-label="Google Play"
+                        >
+                            <svg
+                                class="w-5 h-5"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"
+                                ></path>
+                            </svg>
+                            Google Play
+                        </a>
+                        <a
+                            href="https://apps.apple.com/us/app/u-stat/id6760956387"
+                            target="_blank"
+                            class="inline-flex items-center gap-2 text-[var(--text-app)] opacity-60 hover:opacity-100 hover:text-[var(--accent-color)] transition-all"
+                            aria-label="Download on the App Store"
+                        >
+                            <svg
+                                class="w-5 h-5"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path
+                                    d="M17.05,20.28C16.07,21.23 15,21.08 13.97,20.63C12.88,20.17 11.89,20.15 10.74,20.63C9.3,21.25 8.54,21.07 7.68,20.28C2.79,15.24 3.51,7.56 9.06,7.28C10.41,7.35 11.35,8.02 12.14,8.08C13.32,7.84 14.45,7.15 15.71,7.24C17.22,7.36 18.36,7.96 19.12,9.05C16,10.92 16.74,15.03 19.6,16.18C19.02,17.69 18.27,19.18 17.04,20.29L17.05,20.28ZM12.03,7.21C11.88,4.96 13.71,3.11 15.81,2.93C16.1,5.53 13.45,7.46 12.03,7.21Z"
+                                ></path>
+                            </svg>
+                            App Store
+                        </a>
+                        <a
+                            href="/privacy"
+                            class="text-[var(--text-app)] opacity-60 hover:opacity-100 hover:text-[var(--accent-color)] transition-all"
+                            >Privacy</a
+                        >
+                    </div>
+                    <div
+                        class="inline-block bg-[var(--bg-input)] rounded-2xl p-6 border border-[var(--border-color)] max-w-sm"
+                    >
+                        <div
+                            class="flex items-center gap-2 justify-center mb-2"
+                        >
+                            <Icon
+                                name="lucide:laptop"
+                                class="w-6 h-6 text-[var(--color-blue-600)]"
+                            />
+                            <p class="text-lg font-bold">
+                                Apple Developer Subscription
+                            </p>
+                        </div>
+                        <p class="text-xs opacity-60 mb-4">
+                            Any money I make from this app goes towards the
+                            Apple Developer subscription to keep the iOS version
+                            available.
+                        </p>
+                        <a
+                            href="https://account.venmo.com/u/Daniel-Lang-25"
+                            target="_blank"
+                            class="inline-flex items-center gap-2 bg-[#008CFF] text-white px-6 py-2.5 rounded-xl font-bold hover:brightness-110 transition-all shadow-lg shadow-blue-500/20"
+                        >
+                            <span>Contribute via Venmo</span>
+                        </a>
+                    </div>
+                    <p class="mt-8 text-sm opacity-50">
+                        Have a suggestion or found a bug? <a
+                            href="https://discord.gg/yQEamZ58CA"
+                            target="_blank"
+                            class="underline hover:text-[var(--accent-color)] hover:opacity-100"
+                            >Join the Discord</a
+                        > and let me know!
+                    </p>
+                </div>
+            </footer>
+        </main>
     </div>
-
-    <header
-      class="container mx-auto px-6 py-4 flex justify-between items-center relative z-10"
-    >
-      <div class="flex items-center gap-3 select-none">
-        <h1 class="text-2xl font-black tracking-tighter">
-          <span class="text-[var(--accent-color)]">U</span>-STAT
-        </h1>
-      </div>
-      <ThemeToggle client:load />
-    </header>
-
-    <main class="container mx-auto px-6 pb-12 md:pb-8 relative z-10">
-      <!-- Hero -->
-      <section class="pt-4 pb-6 md:pb-10 text-center max-w-4xl mx-auto">
-        <p
-          class="text-2xl md:text-3xl font-bold mb-10 max-w-3xl mx-auto leading-tight animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300"
-        >
-          Stat tracking for Ultimate.
-        </p>
-
-        <!-- Compact Badges -->
-        <div
-          class="flex flex-wrap justify-center gap-4 sm:gap-6 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500"
-        >
-          <div class="text-center">
-            <div
-              class="text-lg sm:text-xl font-bold text-[var(--color-emerald-500)]"
-            >
-              Free!
-            </div>
-            <div class="text-xs opacity-50">No subscription</div>
-          </div>
-          <div class="hidden sm:block w-px h-10 bg-[var(--border-color)]"></div>
-          <div class="text-center">
-            <div
-              class="text-lg sm:text-xl font-bold text-[var(--color-amber-500)]"
-            >
-              No Login
-            </div>
-            <div class="text-xs opacity-50">No signup needed</div>
-          </div>
-          <div class="hidden sm:block w-px h-10 bg-[var(--border-color)]"></div>
-          <div class="text-center">
-            <div
-              class="text-lg sm:text-xl font-bold text-[var(--color-rose-500)]"
-            >
-              Offline
-            </div>
-            <div class="text-xs opacity-50">Data stored locally</div>
-          </div>
-          <div class="hidden sm:block w-px h-10 bg-[var(--border-color)]"></div>
-          <div class="text-center">
-            <div
-              class="text-lg sm:text-xl font-bold text-[var(--accent-color)]"
-            >
-              No Ads
-            </div>
-            <div class="text-xs opacity-50">Unless Ultiworld buys it*</div>
-            <div class="text-[12px] opacity-40 italic ml-2">
-              rip frisbee-rankings.com
-            </div>
-          </div>
-        </div>
-
-        <!-- App Store Badges -->
-        <div
-          class="mt-10 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-700 flex flex-wrap justify-center gap-2"
-        >
-          <a
-            href="https://play.google.com/store/apps/details?id=com.langdk.ultimatestats"
-            target="_blank"
-            class="inline-flex items-center justify-center h-16 md:h-20 rounded-2xl hover:scale-105 transition-transform"
-          >
-            <img
-              alt="Get it on Google Play"
-              src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-              class="h-full w-auto"
-            />
-          </a>
-          <a
-            href="https://apps.apple.com/us/app/u-stat/id6760956387"
-            target="_blank"
-            class="inline-flex items-center justify-center h-16 md:h-20 rounded-2xl hover:scale-105 transition-transform"
-          >
-            <img
-              alt="Download on the App Store"
-              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-              class="h-11 md:h-[52px] w-auto"
-            />
-          </a>
-        </div>
-      </section>
-
-      <!-- App Preview Screenshots -->
-      <section class="mb-16 md:mb-16 relative">
-        <!-- Segmented Control -->
-        <div class="flex justify-center mb-8">
-          <div
-            class="inline-flex bg-[var(--bg-card)] rounded-full p-1 border border-[var(--border-color)]"
-          >
-            <button
-              id="tab-player-stats"
-              class="screenshot-tab px-6 py-2.5 rounded-full font-bold text-sm transition-all bg-[var(--accent-color)] text-white flex items-center gap-2"
-              onclick="showScreenshot('player-stats')"
-            >
-              <Icon name="lucide:bar-chart-3" class="w-[18px] h-[18px]" />
-              Stats
-            </button>
-            <button
-              id="tab-scoreboard"
-              class="screenshot-tab px-6 py-2.5 rounded-full font-bold text-sm transition-all text-[var(--text-app)] opacity-70 hover:opacity-100 flex items-center gap-2"
-              onclick="showScreenshot('scoreboard')"
-            >
-              <Icon name="lucide:trophy" class="w-[18px] h-[18px]" />
-              Scoreboard
-            </button>
-          </div>
-        </div>
-        <div class="max-w-xs mx-auto">
-          <!-- Video -->
-          <div
-            class="relative bg-gradient-to-b from-[var(--bg-card)] to-transparent rounded-3xl p-3 border border-[var(--border-color)]"
-          >
-            <div class="w-full">
-              <!-- Player Stats Video -->
-              <div id="screenshot-player-stats" class="screenshot-panel">
-                <div class="aspect-[9/16] w-full">
-                  <iframe
-                    src="https://www.youtube.com/embed/Bcg8e0wjTr8?autoplay=1&mute=1&loop=1&playlist=Bcg8e0wjTr8&playsinline=1"
-                    title="Stats Preview"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                    loading="lazy"
-                    class="w-full h-full rounded-2xl shadow-2xl border border-[var(--border-color)]"
-                  ></iframe>
-                </div>
-              </div>
-              <!-- Scoreboard Video -->
-              <div id="screenshot-scoreboard" class="screenshot-panel hidden">
-                <div class="aspect-[9/16] w-full">
-                  <iframe
-                    src="https://www.youtube.com/embed/kGVAO2FMrOk?autoplay=1&mute=1&loop=1&playlist=kGVAO2FMrOk&playsinline=1"
-                    title="Scoreboard Preview"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                    loading="lazy"
-                    class="w-full h-full rounded-2xl shadow-2xl border border-[var(--border-color)]"
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <script is:inline>
-        function showScreenshot(name) {
-          // Hide all panels
-          document.querySelectorAll(".screenshot-panel").forEach((panel) => {
-            panel.classList.add("hidden");
-          });
-          // Show selected panel
-          document
-            .getElementById("screenshot-" + name)
-            .classList.remove("hidden");
-
-          // Update tab styles for segmented control
-          document.querySelectorAll(".screenshot-tab").forEach((tab) => {
-            tab.classList.remove("bg-[var(--accent-color)]", "text-white");
-            tab.classList.add("opacity-70");
-          });
-          const activeTab = document.getElementById("tab-" + name);
-          activeTab.classList.add("bg-[var(--accent-color)]", "text-white");
-          activeTab.classList.remove("opacity-70");
-        }
-      </script>
-
-      <!-- Features -->
-      <section
-        id="features"
-        class="relative py-12 md:py-20 bg-[var(--bg-card)] w-screen left-1/2 -translate-x-1/2"
-      >
-        <div class="max-w-2xl mx-auto px-6">
-          <h2 class="text-3xl sm:text-4xl font-bold mb-10">Info / Features</h2>
-          <div>
-            {
-              [
-                {
-                  title: "Import Team from USA Ultimate",
-                  desc: "Paste a USAU team link and the app will import the roster.",
-                },
-                {
-                  title: "Gender Ratio Tracking",
-                  desc: "Supports Ratio Rule A (ABBA) gender ratio tracking.",
-                },
-                {
-                  title: "Stat Insights",
-                  desc: "Player impact, team offensive/defensive efficiency, average point length, and more.",
-                },
-                {
-                  title: "Share Data",
-                  desc: "Share teams and games with a link, or export raw data as CSV.",
-                },
-                {
-                  title: "Game Timing",
-                  desc: "Hardcap, softcap, timeout, point length, and even halftime timers built in.",
-                },
-                {
-                  title: "Aggregate Games",
-                  desc: "View stats from multiple games to track trends and performance over time.",
-                },
-              ].map((f) => (
-                <div class="py-5 border-t border-[var(--border-color)] flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
-                  <span class="font-semibold text-sm shrink-0 sm:w-48">
-                    {f.title}
-                  </span>
-                  <span class="opacity-60 text-sm">{f.desc}</span>
-                </div>
-              ))
-            }
-            <div class="border-t border-[var(--border-color)]"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Limitations -->
-      <section class="py-10 md:py-16 max-w-2xl mx-auto px-6">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-10">Limitations/Cons</h2>
-        <div>
-          {
-            [
-              {
-                title: "Bugs Possible",
-                desc: `This is a new project, if you run into any issues feel free to report them on <a href="https://discord.gg/yQEamZ58CA" target="_blank" class="underline hover:text-[var(--accent-color)]">Discord</a>.`,
-              },
-              {
-                title: "Future Features May Have Paywalls",
-                desc: "Basic stat tracking and everything currently developed will be free, but if I add cloud sync or more in depth stat tracking I may paywall that.",
-              },
-              {
-                title: "Basic Event Tracking",
-                desc: "Only game events are tracked (goal, assist, drop, turn). Passes between players are not tracked. I have some ideas to handle this in the future, but it's a pretty large feature.",
-              },
-            ].map((item) => (
-              <div class="py-5 border-t border-[var(--border-color)] flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
-                <span class="font-semibold text-sm shrink-0 sm:w-48">
-                  {item.title}
-                </span>
-                <span class="opacity-60 text-sm" set:html={item.desc} />
-              </div>
-            ))
-          }
-          <div class="border-t border-[var(--border-color)]"></div>
-        </div>
-      </section>
-
-      <footer
-        class="border-t border-[var(--border-color)] bg-[var(--bg-card)] py-12 w-screen left-1/2 -translate-x-1/2 relative"
-      >
-        <div class="container mx-auto px-6 text-center">
-          <div
-            class="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 mb-8"
-          >
-            <!-- Social Links -->
-            <a
-              href="https://play.google.com/store/apps/details?id=com.langdk.ultimatestats"
-              target="_blank"
-              class="inline-flex items-center gap-2 text-[var(--text-app)] opacity-60 hover:opacity-100 hover:text-[var(--accent-color)] transition-all"
-              aria-label="Google Play"
-            >
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"
-                ></path>
-              </svg>
-              Google Play
-            </a>
-            <a
-              href="https://apps.apple.com/us/app/u-stat/id6760956387"
-              target="_blank"
-              class="inline-flex items-center gap-2 text-[var(--text-app)] opacity-60 hover:opacity-100 hover:text-[var(--accent-color)] transition-all"
-              aria-label="Download on the App Store"
-            >
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M17.05,20.28C16.07,21.23 15,21.08 13.97,20.63C12.88,20.17 11.89,20.15 10.74,20.63C9.3,21.25 8.54,21.07 7.68,20.28C2.79,15.24 3.51,7.56 9.06,7.28C10.41,7.35 11.35,8.02 12.14,8.08C13.32,7.84 14.45,7.15 15.71,7.24C17.22,7.36 18.36,7.96 19.12,9.05C16,10.92 16.74,15.03 19.6,16.18C19.02,17.69 18.27,19.18 17.04,20.29L17.05,20.28ZM12.03,7.21C11.88,4.96 13.71,3.11 15.81,2.93C16.1,5.53 13.45,7.46 12.03,7.21Z"
-                ></path>
-              </svg>
-              App Store
-            </a>
-            <a
-              href="/privacy"
-              class="text-[var(--text-app)] opacity-60 hover:opacity-100 hover:text-[var(--accent-color)] transition-all"
-              >Privacy</a
-            >
-          </div>
-          <div
-            class="inline-block bg-[var(--bg-input)] rounded-2xl p-6 border border-[var(--border-color)] max-w-sm"
-          >
-            <div class="flex items-center gap-2 justify-center mb-2">
-              <Icon
-                name="lucide:laptop"
-                class="w-6 h-6 text-[var(--color-blue-600)]"
-              />
-              <p class="text-lg font-bold">Apple Developer Subscription</p>
-            </div>
-            <p class="text-xs opacity-60 mb-4">
-              Any money I make from this app goes towards the Apple Developer
-              subscription to keep the iOS version available.
-            </p>
-            <a
-              href="https://account.venmo.com/u/Daniel-Lang-25"
-              target="_blank"
-              class="inline-flex items-center gap-2 bg-[#008CFF] text-white px-6 py-2.5 rounded-xl font-bold hover:brightness-110 transition-all shadow-lg shadow-blue-500/20"
-            >
-              <span>Contribute via Venmo</span>
-            </a>
-          </div>
-          <p class="mt-8 text-sm opacity-50">
-            Have a suggestion or found a bug? <a
-              href="https://discord.gg/yQEamZ58CA"
-              target="_blank"
-              class="underline hover:text-[var(--accent-color)] hover:opacity-100"
-              >Join the Discord</a
-            > and let me know!
-          </p>
-        </div>
-      </footer>
-    </main>
-  </div>
 </Layout>
