@@ -4,7 +4,23 @@
     "details": [
       {
         "appID": "UFY8DT623F.com.langdk.ultimatestats",
-        "paths": ["/s/game/*", "/s/team/*", "/s/games/*"]
+        "paths": [
+          "/s/game/*",
+          "/s/team/*",
+          "/s/games/*",
+          "/s/advanced-game/*",
+          "/s/advanced-games/*"
+        ]
+      },
+      {
+        "appID": "UFY8DT623F.com.langdk.ultimatestats.dev",
+        "paths": [
+          "/s/game/*",
+          "/s/team/*",
+          "/s/games/*",
+          "/s/advanced-game/*",
+          "/s/advanced-games/*"
+        ]
       }
     ]
   }
