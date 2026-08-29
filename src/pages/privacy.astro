@@ -34,9 +34,33 @@ import Layout from "../layouts/Layout.astro";
         <section>
           <h2 class="text-2xl font-bold mb-4">Data Storage</h2>
           <p class="leading-relaxed">
-            By default, everything is stored locally on your device. If you
-            uninstall the app or clear your cache, your teams, games, etc is all
-            gone forever.
+            Your teams, games, and statistics are stored locally on your device
+            by default. If you uninstall the app or clear your cache, that data
+            is gone forever. Limited technical diagnostic information may be
+            sent to Sentry as described below.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold mb-4">
+            Error and Crash Reporting
+          </h2>
+          <p class="leading-relaxed">
+            I use Sentry to help identify and fix crashes and technical
+            problems. When an error occurs, the app may send limited diagnostic
+            information, such as the error and stack trace, app version, device
+            type, operating system version, and related technical context. I
+            have not configured Sentry to collect personal information such as
+            your name, email address, or user ID. I also use Sentry's privacy
+            and data-scrubbing controls to minimize the information retained. I
+            use this diagnostic information only to maintain and improve the
+            app. You can learn more in
+            <a
+              href="https://sentry.io/privacy/"
+              class="underline hover:opacity-80 transition-opacity"
+              target="_blank"
+              rel="noopener noreferrer">Sentry's Privacy Policy</a
+            >.
           </p>
         </section>
 
@@ -101,7 +125,7 @@ import Layout from "../layouts/Layout.astro";
         </section>
 
         <footer class="pt-20 text-sm opacity-50">
-          Last updated: June 7, 2026.
+          Last updated: August 29, 2026.
         </footer>
       </div>
     </main>
